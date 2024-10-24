@@ -54,7 +54,7 @@ def clean_url(url):
     query_params = urllib.parse.parse_qs(parsed_url.query)
     cleaned_url=(query_params["url"][0].split("/ref"))[0]
     if "url" not in query_params: return None
-    return ("https://www.amazon.co.uk" + query_params)
+    return ("https://www.amazon.co.uk" + cleaned_url)
     
 def is_product_already_scraped(identifier, csv_file_path):
     try:
